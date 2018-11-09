@@ -1,0 +1,82 @@
+CREATE TABLE twitter_dataset.all_data (
+    tid text PRIMARY KEY,
+    author text,
+    author_id text,
+    author_profile_image text,
+    author_screen_name text,
+    date text,
+    datetime timestamp,
+    hashtags list<text>,
+    keywords_processed_list list<text>,
+    lang text,
+    like_count int,
+    location text,
+    media_list map<text, frozen<map<text, text>>>,
+    mentions list<text>,
+    quote_count int,
+    quoted_source_id text,
+    reply_count int,
+    replyto_source_id text,
+    retweet_count int,
+    retweet_source_id text,
+    sentiment int,
+    tweet_text text,
+    type text,
+    url_list list<text>,
+    verified text
+) 
+
+
+
+
+CREATE TABLE twitter_dataset.q_3 (
+    hashtags text,
+    datetime timestamp,
+    tid text,
+    author_id text,
+    lang text,
+    location text,
+    tweet_text text,
+    PRIMARY KEY (hashtags, datetime, tid)
+) 
+
+
+CREATE TABLE twitter_dataset.q_13 (
+    date text,
+    tid text,
+    hashtags list<text>,
+    mentions list<text>,
+    PRIMARY KEY (date, tid)
+) 
+
+
+CREATE TABLE twitter_dataset.q_11 (
+    date text,
+    tid text,
+    pair text,
+    PRIMARY KEY (date, tid, pair)
+) 
+
+CREATE TABLE twitter_dataset.counter_location_hash (
+    location text PRIMARY KEY,
+    counter_value counter
+)
+
+CREATE TABLE twitter_dataset.counter_location_real (
+    dummy text,
+    freq int,
+    location text,
+    PRIMARY KEY (dummy, freq, location)
+)
+
+CREATE TABLE twitter_dataset.counter_pair_hash (
+    pair text PRIMARY KEY,
+    counter_value counter
+) 
+
+CREATE TABLE twitter_dataset.counter_pair_real (
+    date text,
+    freq int,
+    pair text,
+    PRIMARY KEY (date, freq, pair)
+)

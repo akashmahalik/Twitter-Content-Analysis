@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+
+
+
+<h2 >Queries</h2>
+     
+        
+                 <form   action="/query_10" method="post">
+                <div >
+                  <label for="inputName" ><b>Query LAB 1<b></label>
+                  <input type="text" id="inputName" name="locations" placeholder="Name" required autofocus> <button  type="submit">Get Result</button>
+                </div>
+        </form>
+        <br><br>
+                 <form   action="/query_20" method="post">
+                <div >
+                  <label for="inputName" ><b>Query LAB 8<b></label>
+                  <input type="text" id="inputName" name="date" placeholder="Name" required autofocus> <button  type="submit">Get Result</button>
+                </div>
+        </form>
+        <br><br>
+
+
+</body>
+
+
+
+
+{%  if nu==7  %}
+<table>
+<tr>
+<th>HashTags</th>
+<th>Popularity</th>
+</tr>
+{% for x in output  %}
+<tr>
+<td>{{x.hashtags}}</td>
+<td>{{x.freq}}</td>
+</tr>
+
+{% endfor %}
+{% endif %}
+
+{%  if nu==6  %}
+<table>
+
+<tr>
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+
+{%  if nu==5  %}
+<table>
+
+<tr>
+<th>LIKE COUNT</th>
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+<td>{{x.like_count}}</td>
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+{%  if nu==4  %}
+<table>
+
+<tr>
+<th>AUTHOR MENTION</th>
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+<td>{{x.mentions}}</td>
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+
+{%  if nu==3  %}
+<table>
+
+<tr>
+<th>HASHTAGS</th>
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+<td>{{x.hashtags}}</td>
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+
+
+{%  if nu==2  %}
+<table>
+
+<tr>
+<th>KEYWORD</th>
+<th>LIKE COUNT</th>
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+<td>{{x.keywords}}</td>
+<td>{{x.like_count}}</td>
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+{%  if nu==1  %}
+<table>
+
+<tr>
+<th>AUTHOR NAME</th>
+<th>DATETIME</th>
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+<td>{{x.author_screen_name}}</td>
+<td>{{x.datetime}}</td>
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+{%  if nu==8  %}
+<table>
+<h1>DELETED TWEETS INFO</h1><br>
+<tr>
+
+<th>TID</th>
+<th>AUTHOR ID</th>
+<th>LANGUAGE</th>
+<th>TWEET TEXT</th>
+<th>LOCATION</th>
+</tr>
+
+{% for x in output  %}
+<tr>
+
+<td>{{x.tid}}</td>
+<td>{{x.author_id}}</td>
+<td>{{x.lang}}</td>
+<td>{{x.tweet_text}}</td>
+<td>{{x.location}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+{%  if nu==10  %}
+<table>
+<h1>HASHTAGS BY LOCATIONS</h1><br>
+<tr>
+
+<th>LOCATIONS</th>
+<!-- <th>FREQUENCY</th> -->
+
+</tr>
+
+{% for x in output  %}
+<tr>
+
+<td>{{x.location}}</td>
+<td>{{x.freq}}</td>
+
+
+
+</tr>
+
+{% endfor %}
+TOTAL ROWS = {{row_total}}
+
+{% endif %}
+
+
+
+{%  if nu==20  %}
+<table>
+<h1>PAIR in particular date</h1><br>
+<tr>
+
+<th>Date</th>
+<th>PAIR</th>
+<th>FREQUENCY</th>
+
+</tr>
+
+{% for x in output  %}
+<tr>
+
+<td>{{x.date}}</td>
+<td>{{x.pair}}</td>
+<td>{{x.freq}}</td>
+
+
+
+</tr>
+
+{% endfor %}
+TOTAL ROWS = {{row_total}}
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
