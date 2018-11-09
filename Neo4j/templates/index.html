@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+
+
+
+<h2 >Queries</h2>
+     
+        
+                 <form   action="/query_7" method="post">
+                <div >
+                  <label for="inputName" ><b>Query 7<b></label>
+                  <input type="text" id="inputName" name="hash" placeholder="Name" required autofocus>
+                  <button  type="submit">Get Result</button>
+                </div>
+        </form>
+        <br><br>
+                 <form   action="/query_11" method="post">
+                <div >
+                  <label for="inputName" ><b>Query 11<b></label>
+                  <input type="text" id="inputName" name="author" placeholder="Name" required autofocus> <button  type="submit">Get Result</button>
+                </div>
+        </form>
+        <br><br>
+           
+
+
+
+</body>
+
+
+
+
+{%  if nu==7  %}
+<table>
+<tr>
+<th>HashTag</th>
+<th>Mention</th>
+
+<th>TIDs</th>
+<th>Count</th>
+
+</tr>
+{% for x in output  %}
+<tr>
+<td>{{x["hashtag"]}}</td>
+
+<td>{{x["mention"]}}</td>
+<td>{{x["TIDs"]}}</td>
+<td>{{x["count"]}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+
+{%  if nu==11  %}
+<table>
+<tr>
+<th>Author</th>
+<th>Replied</th>
+<th>TIDs</th>
+<th>count</th>
+
+</tr>
+{% for x in output  %}
+<tr>
+<td>{{x["author"]}}</td>
+<td>{{x["replied"]}}</td>
+<td>{{x["TIDs"]}}</td>
+<td>{{x["count"]}}</td>
+
+
+</tr>
+
+{% endfor %}
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
